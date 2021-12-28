@@ -17,6 +17,7 @@ function show_usage {
     echo "Usage:"
     echo "$0 partition [simple_mbr|simple_uefi] [disk-name]"
     echo "$0 home-manager [install]"
+    echo "$0 system_config [install_build|install_switch]"
     exit 1
 }
 
@@ -116,6 +117,40 @@ function home-manager {
     esac
 }
 
+function __do_system_install_build {
+    log_debug "__do_system_install_build"
+
+    sudo cp -b ./system/configuration.nix /etc/nixos
+    sudo nixos-rebuild build --show-trace
+
+    log_info "Done"
+}
+
+function __do_system_install_switch {
+    log_debug "__do_system_install_switch"
+
+    sudo cp -b ./system/configuration.nix /etc/nixos
+    sudo nixos-rebuild switch --show-trace
+
+    log_info "Done"
+}
+
+function system_config {
+    local command=$1
+
+    case $command in
+        "install_build")
+             __do_system_install_build
+            ;;
+        "install_switch")
+            __do_system_install_switch
+            ;;
+        *)
+            log_error "Unknown system command"
+            ;;
+    esac
+}
+
 # Handle CLI arguments
 case $1 in
     "partition")
@@ -124,6 +159,9 @@ case $1 in
     "home-manager")
         home-manager $2
         ;;
+    "system_config")
+        system_config $2
+	;;
     *)
         show_usage
         ;;
