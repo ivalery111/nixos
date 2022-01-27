@@ -35,13 +35,13 @@ function __do_partition_simple_mbr {
     local disk_name=$1
 
     log_info "Starting partition..."
-    parted ${disk_name} -- mklabel msdos
-    parted ${disk_name} -- mkpart primary 1MiB -4GiB
-    parted ${disk_name} -- mkpart primary linux-swap -4GiB 100%
+    parted "${disk_name}" -- mklabel msdos
+    parted "${disk_name}" -- mkpart primary 1MiB -4GiB
+    parted "${disk_name}" -- mkpart primary linux-swap -4GiB 100%
 
-    mkfs.ext4 -L NIXOS ${disk_name}1
-    mkswap -L swap ${disk_name}2
-    swapon ${disk_name}2
+    mkfs.ext4 -L NIXOS "${disk_name}"1
+    mkswap -L swap "${disk_name}"2
+    swapon "${disk_name}"2
     mount /dev/disk/by-label/NIXOS /mnt
     log_info "Partition done."
 
@@ -54,16 +54,16 @@ function __do_partition_simple_uefi {
     local disk_name=$1
 
     log_info "Starting partition..."
-    parted ${disk_name} -- mklabel gpt
-    parted ${disk_name} -- mkpart primary 512MiB -4GiB
-    parted ${disk_name} -- mkpart primary linux-swap -4GiB 100%
-    parted ${disk_name} -- mkpart ESP fat32 1MiB 512MiB
-    parted ${disk_name} -- set 3 esp on
+    parted "${disk_name}" -- mklabel gpt
+    parted "${disk_name}" -- mkpart primary 512MiB -4GiB
+    parted "${disk_name}" -- mkpart primary linux-swap -4GiB 100%
+    parted "${disk_name}" -- mkpart ESP fat32 1MiB 512MiB
+    parted "${disk_name}" -- set 3 esp on
 
-    mkfs.ext4 -L NIXOS ${disk_name}1
-    mkswap -L SWAP ${disk_name}2
-    swapon ${disk_name}2
-    mkfs.fat -F 32 -n boot ${disk_name}3
+    mkfs.ext4 -L NIXOS "${disk_name}"1
+    mkswap -L SWAP "${disk_name}"2
+    swapon "${disk_name}"2
+    mkfs.fat -F 32 -n boot "${disk_name}"3
     mount /dev/disk/by-label/NIXOS /mnt
     mkdir -p /mnt/boot
     mount /dev/disk/by-label/boot /mnt/boot
@@ -78,10 +78,10 @@ function partition {
 
     case $partition_type in
         "simple_mbr")
-            __do_partition_simple_mbr $disk_name
+            __do_partition_simple_mbr "$disk_name"
             ;;
         "simple_uefi")
-            __do_partition_simple_uefi $disk_name
+            __do_partition_simple_uefi "$disk_name"
             ;;
         *)
             echo "[E]: Unknown partition type"
@@ -154,13 +154,13 @@ function system_config {
 # Handle CLI arguments
 case $1 in
     "partition")
-        partition $2 $3
+        partition "$2" "$3"
         ;;
     "home-manager")
-        home-manager $2
+        home-manager "$2"
         ;;
     "system_config")
-        system_config $2
+        system_config "$2"
 	;;
     *)
         show_usage
