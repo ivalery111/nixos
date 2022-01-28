@@ -29,6 +29,8 @@
 
     calibre
     qpdf
+
+    arandr
   ];
 
 }
