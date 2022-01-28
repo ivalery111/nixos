@@ -21,9 +21,6 @@ in {
 
       defaultWorkspace = "workspace number 1";
 
-      #window.border = 0;
-      #window.titlebar = false;
-
       keybindings = lib.mkOptionDefault {
         "${mod}+d" = "exec --no-startup-id \"rofi -modi drun,run -show drun\"";
 
@@ -52,6 +49,28 @@ in {
         # Navigate workspaces next/previous
         "${mod}+Ctrl+Right" = "workspace next";
         "${mod}+Ctrl+Left" = "workspace prev";
+
+        # Switch to workspace
+        "${mod}+1" = "workspace 1";
+        "${mod}+2" = "workspace 2";
+        "${mod}+3" = "workspace 3";
+        "${mod}+4" = "workspace 4";
+        "${mod}+5" = "workspace 5";
+        "${mod}+6" = "workspace 6";
+        "${mod}+7" = "workspace 7";
+        "${mod}+8" = "workspace 8";
+        "${mod}+9" = "workspace 9";
+
+        # Move focused container to workspace
+        "${mod}+Shift+1" = "move container to workspace 1";
+        "${mod}+Shift+2" = "move container to workspace 2";
+        "${mod}+Shift+3" = "move container to workspace 3";
+        "${mod}+Shift+4" = "move container to workspace 4";
+        "${mod}+Shift+5" = "move container to workspace 5";
+        "${mod}+Shift+6" = "move container to workspace 6";
+        "${mod}+Shift+7" = "move container to workspace 7";
+        "${mod}+Shift+8" = "move container to workspace 8";
+        "${mod}+Shift+9" = "move container to workspace 9";
 
         "${mod}+Ctrl+greater" = "move workspace to output right";
         "${mod}+Ctrl+less" = "move workspace to output left";
@@ -86,9 +105,7 @@ in {
       ];
 
       gaps = {
-        bottom = 2;
-        horizontal = 2;
-        inner = 5;
+        inner = 6;
         outer = -2;
         smartGaps = true;
         smartBorders = "on";
@@ -109,6 +126,24 @@ in {
     extraConfig =
     ''
     default_border pixel
+
+    # Set shut down, restart and locking features
+    bindsym $mod+z mode "$mode_system"
+    set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+    set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+    mode "$mode_system" {
+        bindsym l exec --no-startup-id i3exit lock, mode "default"
+        bindsym s exec --no-startup-id i3exit suspend, mode "default"
+        bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+        bindsym e exec --no-startup-id i3exit logout, mode "default"
+        bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+        bindsym r exec --no-startup-id i3exit reboot, mode "default"
+        bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+
+        # exit system mode: "Enter" or "Escape"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+    }
     '';
   };
 
