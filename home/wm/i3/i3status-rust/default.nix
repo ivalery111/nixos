@@ -47,7 +47,10 @@
             alert = 10.0;
           }
           { block = "backlight"; }
-          { block = "sound"; }
+          {
+            block = "sound";
+            format = "{volume}";
+          }
           {
             block = "battery";
             interval = 10;
@@ -61,7 +64,7 @@
         settings = {
           theme = { name = "gruvbox-dark"; };
         };
-        icons = "awesome5";
+        icons = "material-nf";
       };
     };
   };
