@@ -13,7 +13,7 @@ in {
       modifier = mod;
 
       fonts = {
-        names = ["DejaVu Sans Mono" "FontAwesome 6"];
+        names = [ "Fira Code" "FontAwesome 6" ];
         size = 12.0;
       };
 
@@ -116,7 +116,7 @@ in {
           statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs $HOME/.config/i3status-rust/config-base.toml";
           position = "top";
           fonts = {
-            names = ["DejaVu Sans Mono" "FontAwesome 6"];
+            names = ["Fira Code" "FontAwesome 6"];
             size = 12.0;
           };
         }
