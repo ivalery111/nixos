@@ -6,6 +6,11 @@
 
     userEmail = "ivalery111@gmail.com";
     userName = "Valery Ivanov";
-  };
 
+    extraConfig = {
+      core = {
+        editor = "vim";
+      };
+    };
+  };
 }
