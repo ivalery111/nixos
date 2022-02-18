@@ -13,8 +13,8 @@
       command = "betterlockscreen -l dim";
     }
     {
-      delay = 900;
-      command = "systemctl suspend";
+      delay = 3600;
+      command = "systemctl hibernate";
     }
     ];
   };
