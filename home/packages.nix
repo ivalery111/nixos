@@ -1,7 +1,9 @@
 { pkgs, ... }:
 {
-
   home.packages = with pkgs; [
+
+    virt-manager
+    virtualenv
     neofetch
 
     gcc10
@@ -26,6 +28,7 @@
     obsidian
 
     python3Full
+    python39Packages.pip
 
     calibre
     qpdf

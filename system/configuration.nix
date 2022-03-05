@@ -32,7 +32,10 @@
   virtualisation.docker = {
     enable = true;
     enableOnBoot = true;
+  };
 
+  virtualisation.libvirtd = {
+    enable = true;
   };
 
   networking.hostName = "FW"; # Define your hostname.
@@ -98,7 +101,7 @@
   users.users.valery = {
     isNormalUser = true;
     shell = pkgs.fish;
-    extraGroups = [ "wheel" "networkmanager" "video" "docker" ];
+    extraGroups = [ "wheel" "networkmanager" "video" "docker" "libvirtd" "kvm" ];
   };
 
   fonts = {

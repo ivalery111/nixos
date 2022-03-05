@@ -15,7 +15,7 @@
           }
           {
             block = "networkmanager";
-            interface_name_exclude = ["br\\-[0-9a-f]{12}" "docker\\d+"];
+            interface_name_exclude = ["br\\-[0-9a-f]{12}" "docker\\d+" "virbr\\d+"];
             device_format = "{icon} {ap} {ips}";
             on_click = "alacritty -e nmtui";
           }
