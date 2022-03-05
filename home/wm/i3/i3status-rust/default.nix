@@ -14,6 +14,12 @@
             format_unavailable = "HD450 X";
           }
           {
+            block = "bluetooth";
+            mac = "60:F4:3A:BD:7E:77";
+            format = "TWS 200";
+            format_unavailable = "TWS 200 X";
+          }
+          {
             block = "networkmanager";
             interface_name_exclude = ["br\\-[0-9a-f]{12}" "docker\\d+" "virbr\\d+"];
             device_format = "{icon} {ap} {ips}";
