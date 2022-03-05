@@ -114,6 +114,7 @@
     fantasque-sans-mono
     font-awesome-ttf
     font-awesome_4
+    font-awesome
     powerline-fonts
     iosevka
     emojione

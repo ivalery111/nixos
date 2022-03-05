@@ -9,6 +9,9 @@
         TERM = "xterm-256color";
       };
       font = {
+        normal = {
+          family = "Fira Code Nerd Font";
+        };
         size = 6;
         scale_with_dpi = true;
       };
