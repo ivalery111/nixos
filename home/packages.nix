@@ -34,6 +34,7 @@
     qpdf
 
     arandr
+    wlsunset
   ];
 
 }

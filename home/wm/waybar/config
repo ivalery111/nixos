@@ -75,12 +75,12 @@
 
 	"custom/wlsunset": {
 		"format": "",
-		"on-click": "sway-custom-wlsunset.sh toggle",
+		"on-click": "/home/valery/nixos/scripts/sway-custom-wlsunset.sh toggle",
 	},
 
 	"custom/bt": {
 		"format": "HD450",
-		"on-click": "sway-custom-bluetooth.sh toogle",
+		"on-click": "/home/valery/nixos/scripts/sway-custom-bluetooth.sh toggle",
   	},
 
 	"network": {
