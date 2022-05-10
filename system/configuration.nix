@@ -65,31 +65,49 @@
     intel-media-driver
   ];
 
+  # TODO: Configurate sway with home-manager
+  programs.sway = {
+    enable = true;
+    extraPackages = with pkgs; [
+      swaylock
+      swayidle
+      xwayland
+      waybar
+      mako
+      kanshi
+      foot
+      dmenu
+      rofi
+      light
+    ];
+    extraSessionCommands = ''
+      export SDL_VIDEODRIVER=wayland
+      export QT_QPA_PLATFORM=wayland
+      export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
+      export _JAVA_AWT_WM_NONREPARENTING=1
+      export MOZ_ENABLE_WAYLAND=1
+    '';
+  };
+  # TODO: use $HOME environment variable
+  environment = {
+    etc = {
+      "sway/config".source          = /home/valery/nixos/home/wm/sway/config;
+      "xdg/waybar/config".source    = /home/valery/nixos/home/wm/waybar/config;
+      "xdg/waybar/style.css".source = /home/valery/nixos/home/wm/waybar/style.css;
+    };
+  };
+  programs.waybar.enable = true;
+
   environment.pathsToLink = [ "/libexec" ];
   services.xserver = {
     enable = true;
     dpi = 96;
 
     displayManager = {
-      gdm.enable = true;
-      defaultSession = "none+i3";
-    };
-
-    windowManager.i3 = {
-      enable = true;
-
-      package = pkgs.i3-gaps;
-      extraPackages = with pkgs; [
-        i3blocks
-      ];
+      gdm.enable  = true;
+      gdm.wayland = true;
     };
   };
-
-
-
-  # Configure keymap in X11
-  services.xserver.layout = "us";
-  services.xserver.xkbOptions = "eurosign:e";
 
   # Enable sound.
   sound.enable = true;
@@ -101,7 +119,7 @@
   users.users.valery = {
     isNormalUser = true;
     shell = pkgs.fish;
-    extraGroups = [ "wheel" "networkmanager" "video" "docker" "libvirtd" "kvm" ];
+    extraGroups = [ "wheel" "networkmanager" "video" "docker" "libvirtd" "kvm" "input" ];
   };
 
   fonts = {

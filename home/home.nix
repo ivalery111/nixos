@@ -6,14 +6,7 @@
   home.homeDirectory = "/home/valery";
 
   imports = [
-    ./wm/i3/default.nix
-    ./wm/launcher/rofi/default.nix
-    ./wm/i3/i3status-rust/default.nix
-
-    ./terminal/alacritty/default.nix
-    ./terminal/urxvt/default.nix
-    ./terminal/shell/promt/starship/default.nix
-    ./terminal/shell/fish/default.nix
+    ./terminal/foot/default.nix
 
     ./editors/neovim/default.nix
     ./editors/vscode/default.nix
