@@ -60,10 +60,10 @@ function __do_partition_simple_uefi {
     parted "${disk_name}" -- mkpart ESP fat32 1MiB 512MiB
     parted "${disk_name}" -- set 3 esp on
 
-    mkfs.ext4 -L NIXOS "${disk_name}"1
-    mkswap -L SWAP "${disk_name}"2
-    swapon "${disk_name}"2
-    mkfs.fat -F 32 -n boot "${disk_name}"3
+    mkfs.ext4 -L NIXOS "${disk_name}"p1
+    mkswap -L SWAP "${disk_name}"p2
+    swapon "${disk_name}"p2
+    mkfs.fat -F 32 -n boot "${disk_name}"p3
     mount /dev/disk/by-label/NIXOS /mnt
     mkdir -p /mnt/boot
     mount /dev/disk/by-label/boot /mnt/boot
