@@ -9,6 +9,8 @@
     gcc10
     rnix-lsp
     ccls
+    cscope
+    universal-ctags
 
     cmake
     gnumake
@@ -35,6 +37,26 @@
 
     arandr
     wlsunset
+
+    tmux
+    screen
+    picocom
+    minicom
+    putty
+
+    nnn
+    pcmanfm
+    unzip
+
+    gparted
+
+    rpi-imager
+
+    pulseview
+
+    gitRepo
+
+    htop
   ];
 
 }

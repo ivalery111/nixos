@@ -19,15 +19,14 @@ window#waybar {
 }
 
 #workspaces,
-#clock.1,
-#clock.2,
-#clock.3,
+#clock,
 #pulseaudio,
 #memory,
 #cpu,
 #battery,
 #backlight,
 #custom-wlsunset,
+#custom-bt,
 #network,
 #disk,
 #tray {
@@ -52,32 +51,40 @@ window#waybar {
 }
 
 #pulseaudio {
-	color: #268bd2;
+	color: #f2d06b;
 }
 #memory {
-	color: #2aa198;
+	color: #f2d06b;
 }
 #cpu {
-	color: #6c71c4;
+	color: #f2d06b;
 }
 #battery {
-	color: #859900;
+	color: #f2d06b;
 }
 #backlight {
-	color: #f5ef42;
+	color: #f2d06b;
 }
 #custom-wlsunset {
 	padding: 0 6px;
-	color: #f5ef42;
-}
-#network {
-	color:#38e855
-}
-#disk {
-	color: #b58900;
+	color: #f2d06b;
 }
 
-#clock,
+#custom-bt {
+	color: #f2d06b;
+}
+
+#network {
+	color: #f2d06b;
+}
+#disk {
+	color: #f2d06b;
+}
+
+#clock {
+	color: #f2d06b;
+}
+
 #pulseaudio,
 #memory,
 #cpu,

@@ -53,6 +53,8 @@
     keyMap = "us";
   };
 
+  security.polkit.enable = true;
+
   # hardware.opengl.enable = true;
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
@@ -68,6 +70,7 @@
   # TODO: Configurate sway with home-manager
   programs.sway = {
     enable = true;
+    wrapperFeatures.gtk = true;
     extraPackages = with pkgs; [
       swaylock
       swayidle
@@ -97,6 +100,7 @@
     };
   };
   programs.waybar.enable = true;
+  programs.qt5ct.enable = true;
 
   environment.pathsToLink = [ "/libexec" ];
   services.xserver = {
@@ -119,20 +123,22 @@
   users.users.valery = {
     isNormalUser = true;
     shell = pkgs.fish;
-    extraGroups = [ "wheel" "networkmanager" "video" "docker" "libvirtd" "kvm" "input" ];
+    extraGroups = [ "wheel" "networkmanager" "video" "docker" "libvirtd" "kvm" "input" "dialout" ];
   };
 
   fonts = {
+    enableDefaultFonts = true;
     fontconfig.enable = true;
     fontDir.enable = true;
     enableGhostscriptFonts = true;
   };
   fonts.fonts = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Meslo" "JetBrainsMono" ]; })
     fantasque-sans-mono
-    font-awesome-ttf
     font-awesome_4
     font-awesome
+    font-awesome-ttf
+    powerline-fonts
+    nerdfonts
     powerline-fonts
     iosevka
     emojione
@@ -166,6 +172,9 @@
     lxappearance
     brightnessctl
     lm_sensors
+    polkit_gnome
+    wireguard-tools
+    openresolv
   ];
 
   programs.mtr.enable = true;

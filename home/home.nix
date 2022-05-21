@@ -7,6 +7,7 @@
 
   imports = [
     ./terminal/foot/default.nix
+    ./terminal/shell/fish/default.nix
 
     ./editors/neovim/default.nix
     ./editors/vscode/default.nix
