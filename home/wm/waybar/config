@@ -73,7 +73,7 @@
 	},
 
 	"custom/bt": {
-		"format": "HD450",
+		"format": "HD450",
 		"on-click": "/home/valery/nixos/scripts/sway-custom-bluetooth.sh toggle",
   	},
 

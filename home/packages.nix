@@ -6,7 +6,6 @@
     virtualenv
     neofetch
 
-    gcc10
     rnix-lsp
     ccls
     cscope
@@ -57,6 +56,9 @@
     gitRepo
 
     htop
+
+    verilog
+    gtkwave
   ];
 
 }

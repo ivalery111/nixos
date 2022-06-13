@@ -8,7 +8,7 @@
       "editor.fontFamily" = "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'";
       "nixEnvSelector.nixFile" = "\${workspaceRoot}\/default.nix";
       "terminal.integrated.fontFamily" = "MesloLGL Nerd Font";
-      "terminal.integrated.fontSize" = "14";
+      "terminal.integrated.fontSize" = 14;
     };
 
     extensions = with pkgs.vscode-extensions; [

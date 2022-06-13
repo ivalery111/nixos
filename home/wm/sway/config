@@ -237,6 +237,8 @@ default_border    pixel 1
 hide_edge_borders smart
 
 # exec_always ${HOME}/.config/sway/scripts/wlsunset.sh
+exec_always sway-custom-import-gsettings
 exec_always sway-custom-wlsunset.sh start
+
 
 include /etc/sway/config.d/*

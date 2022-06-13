@@ -21,6 +21,7 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = [ "mem_sleep_default=deep" ];
+  #boot.extraModulePackages = [ config.boot.kernelPackages.wireguard ];
 
   services.thermald.enable = true;
   services.tlp.enable = true;
@@ -38,8 +39,24 @@
     enable = true;
   };
 
+  virtualisation.virtualbox = {
+    host.enable              = true;
+    host.enableExtensionPack = true;
+    host.addNetworkInterface = true;
+  };
+
   networking.hostName = "FW"; # Define your hostname.
   networking.networkmanager.enable = true;
+  networking.networkmanager.insertNameservers = [ "8.8.8.8" ];
+  #networking.firewall = {
+  #  allowedTCPPorts = [ 53 ];
+  #  allowedUDPPorts = [ 53 51820 ];
+  #};
+  #networking.nat = {
+  #  enable = true;
+  #  externalInterface = "wlp170s0";
+  #  internalInterfaces = [ "xeovo-fi" ];
+  #};
 
   # Set your time zone.
   time.timeZone = "Europe/Moscow";
@@ -89,6 +106,7 @@
       export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
       export _JAVA_AWT_WM_NONREPARENTING=1
       export MOZ_ENABLE_WAYLAND=1
+      export NIXOS_OZONE_WL=1
     '';
   };
   # TODO: use $HOME environment variable
@@ -123,7 +141,7 @@
   users.users.valery = {
     isNormalUser = true;
     shell = pkgs.fish;
-    extraGroups = [ "wheel" "networkmanager" "video" "docker" "libvirtd" "kvm" "input" "dialout" ];
+    extraGroups = [ "wheel" "networkmanager" "video" "docker" "libvirtd" "kvm" "vboxusers" "input" "dialout" ];
   };
 
   fonts = {
@@ -173,8 +191,12 @@
     brightnessctl
     lm_sensors
     polkit_gnome
+    wireguard
     wireguard-tools
     openresolv
+    gsettings-desktop-schemas
+    gtk_engines
+    gtk-engine-murrine
   ];
 
   programs.mtr.enable = true;
