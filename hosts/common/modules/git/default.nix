@@ -2,6 +2,7 @@
 {
   home-manager.users.valery.programs.git = {
     enable = true;
+    package = pkgs.gitAndTools.gitFull;
   };
 
   # Set alacritty config
