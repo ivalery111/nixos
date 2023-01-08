@@ -10,6 +10,7 @@
     qbittorrent
     vlc
     feh
+    obsidian
   ];
 
   home.stateVersion = "22.11";
