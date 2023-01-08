@@ -11,10 +11,12 @@
     ../../dunst
     ../../redshift
     ../../thunar
+    ../../betterlockscreen
+    ../../xidlehook
   ];
 
   services.xserver.enable = true;
-  services.xserver.autorun = false;
+  services.xserver.autorun = true;
   services.xserver.layout = "us,ru";
   services.xserver.desktopManager.xterm.enable = false;
   services.xserver.displayManager.defaultSession = "none+i3";
