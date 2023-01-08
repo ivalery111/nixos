@@ -13,6 +13,7 @@
     ../../thunar
     ../../betterlockscreen
     ../../xidlehook
+    ../../rofi
   ];
 
   services.xserver.enable = true;
