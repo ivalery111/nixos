@@ -11,6 +11,7 @@
     vlc
     feh
     obsidian
+    arandr
   ];
 
   home.stateVersion = "22.11";
