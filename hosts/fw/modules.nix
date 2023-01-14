@@ -12,6 +12,7 @@
     feh
     obsidian
     arandr
+    libreoffice-still
   ];
 
   home.stateVersion = "22.11";

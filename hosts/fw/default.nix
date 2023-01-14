@@ -18,7 +18,7 @@
     defaultUserShell = pkgs.zsh;
     users.valery = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" "audio" "video" "input" ];
+      extraGroups = [ "wheel" "networkmanager" "audio" "video" "input" "docker" ];
     };
   };
 

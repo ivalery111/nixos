@@ -16,6 +16,7 @@
     ../../xidlehook
     ../../rofi
     ../../autorandr
+    ../../docker
   ];
 
   #services.xserver.enable = true;
