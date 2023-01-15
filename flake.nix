@@ -31,6 +31,18 @@
           }
         ];
       };
+      rpi = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
+        modules = [
+          ./hosts/rpi
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.valery = import ./hosts/rpi/modules.nix;
+          }
+        ];
+      };
     };
   };
 }
