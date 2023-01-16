@@ -2,6 +2,7 @@
 {
   imports = [
     ../common/modules/zsh
+    ../common/modules/docker
   ];
 
   # NixOS wants to enable GRUB by default
