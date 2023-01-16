@@ -10,12 +10,8 @@
       enable = true;
       plugins = [ 
         "git"
-        "ssh-agent"
       ];
       theme = "simple";
-      extraConfig = ''
-        zstyle :omz:plugins:ssh-agent identities github
-      '';
     };
   };
 }
