@@ -11,7 +11,7 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # A bunch of boot parameters needed for optimal runtime on RPi 3b+
-  boot.kernelParams = ["cma=256M"];
+  boot.kernelParams = [ "cma=256M" "console=ttyS1,115200n8" ];
   boot.loader.raspberryPi.enable = true;
   boot.loader.raspberryPi.version = 3;
   boot.loader.raspberryPi.uboot.enable = true;
