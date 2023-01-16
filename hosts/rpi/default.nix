@@ -1,5 +1,9 @@
 { config, pkgs, lib, ... }:
 {
+  imports = [
+    ../common/modules/zsh
+  ];
+
   # NixOS wants to enable GRUB by default
   boot.loader.grub.enable = false;
 
