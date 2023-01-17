@@ -36,7 +36,7 @@
       openssh.authorizedKeys.keys = [
         "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDodMoUBvzn2ENILnSSnCkqoQOEA41u1rjonlITOMqoAnB5yVfutv2y78CuhDjYTJCm8PCy4IVOGr/yXnFlsL0w0z9YubuuM9lFsFB/c5d46Uk6luksea5DRc48kJLlgfcEZP3M0aEBMS53z819w3daRHdUDYJEhQV4hELM53kmhAsq57Z7v5G5V56w5jgnlfAM2aSM5qZsaPkYJmoVwY5TNGi3aKWtcmM5jVA1pVbo+eJCHns4utBnP7XKQoWhhHb1Coc+HZf/rNAE06i37v6qI/wXay19TrgjXRJOgAuJz1vTvusPEW0929O1hKgvmYyHibRkiHEErKcLWyqAa/5Pe8+JCufvQhXOR/0OTAWa/iTU8c4VEGhf5JzjQY3+8R/TIVmkJH4F2xGxFg07PK3TNdJ1UvJ8LcLkVOYnFRWUceMqTcQmAMF0+5JzlTI5Jn2aKgsFiuuYLBqrZ97mq0T/38wX5Rgq1GyagFfpbrjC0EHttQGhtCOP/yIzNiWzeb0= valery@fw"
       ];
-      extraGroups = [ "wheel" "networkmanager" "audio" "video" "input" ];
+      extraGroups = [ "wheel" "networkmanager" "audio" "video" "input" "docker" ];
     };
   };
 
