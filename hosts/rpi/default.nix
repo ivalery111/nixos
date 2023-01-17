@@ -37,6 +37,8 @@
     };
   };
 
+  networking.hostName = "rpi";
+
 
   # Preserve space by sacrificing documentation and history
   documentation.nixos.enable = false;
