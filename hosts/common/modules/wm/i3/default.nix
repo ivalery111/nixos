@@ -17,6 +17,7 @@
     ../../rofi
     ../../autorandr
     ../../docker
+    ../../feh
   ];
 
   environment.pathsToLink = [ "/libexec" ];
