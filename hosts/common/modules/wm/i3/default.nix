@@ -57,7 +57,7 @@
     source = ../../../config/i3/config;
   };
 
-  home-manager.users.valery.home.file."i3/scripts" = {
+  home-manager.users.valery.xdg.configFile."i3/scripts" = {
     source = ../../../config/i3/scripts;
   };
 }
