@@ -19,28 +19,10 @@
     ../../docker
   ];
 
-  #services.xserver.enable = true;
-  #services.xserver.autorun = true;
-  #services.xserver.layout = "us";
-  ##services.xserver.desktopManager.xterm.enable = false;
-  ##services.xserver.displayManager.defaultSession = "xfce";
-  ##services.xserver.displayManager.lightdm.enable = true;
-  #services.xserver.displayManager.defaultSession = "xfce";
-  #services.xserver.windowManager.i3.enable = true;
-
   environment.pathsToLink = [ "/libexec" ];
 
   services.xserver = {
     enable = true;   
-
-    desktopManager = {
-      xterm.enable = false;
-      xfce = {
-        enable = false;
-        noDesktop = true;
-        enableXfwm = false;
-      };
-    };
 
     displayManager = {
       sddm = {
@@ -50,6 +32,7 @@
     };
 
     windowManager.i3.enable = true;
+    windowManager.i3.package = pkgs.i3-gaps;
   };
 
   # Set i3 config
