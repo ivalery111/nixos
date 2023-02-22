@@ -185,3 +185,5 @@ exec_always --no-startup-id picom
 
 # Always restart polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+exec_always --no-startup-id feh --bg-scale $HOME/Pictures/bg.jpg
