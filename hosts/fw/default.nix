@@ -17,6 +17,7 @@
   users = {
     defaultUserShell = pkgs.zsh;
     users.valery = {
+      initialPassword = "1234";
       isNormalUser = true;
       extraGroups = [ "wheel" "networkmanager" "audio" "video" "input" "docker" ];
     };
