@@ -26,8 +26,8 @@ bindsym $mod+shift+l exec betterlockscreen -l dim
 exec --no-startup-id xidlehook --not-when-audio --not-when-fullscreen --timer 300 "betterlockscreen -l dim" "" &
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec "xbacklight -inc 2"
-bindsym XF86MonBrightnessDown exec "xbacklight -dec 2"
+bindsym XF86MonBrightnessUp   exec $HOME/.config/i3/scripts/custom_backlight.sh increase
+bindsym XF86MonBrightnessDown exec $HOME/.config/i3/scripts/custom_backlight.sh decrease
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
