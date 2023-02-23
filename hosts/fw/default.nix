@@ -73,7 +73,8 @@
     };
     fonts = with pkgs; [
       jetbrains-mono
-      font-awesome
+      font-awesome_5
+      noto-fonts
     ];
   };
 
