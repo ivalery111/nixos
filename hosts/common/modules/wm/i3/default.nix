@@ -3,7 +3,7 @@
   imports = [
     # ../../dm/xfce
     ../../polybar
-    ../../alacritty
+    ../../kitty
     ../../vscode
     ../../zsh
     ../../neovim
