@@ -9,7 +9,16 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_latest.override {
+    argsOverride = rec {
+      src = pkgs.fetchurl {
+        url = "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-${version}.tar.xz";
+        sha256 = "NI2XTBQ/3vhRfscD/aokut4SpJBHhIvpLLnjJTsZ75g=";
+      };
+      version = "5.15.96";
+      modDirVersion = "5.15.96";
+    };
+  });
   boot.supportedFilesystems = [ "ntfs" ];
 
   services.fwupd.enable = true;
