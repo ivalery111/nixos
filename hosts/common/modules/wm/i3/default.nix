@@ -4,7 +4,6 @@
     # ../../dm/xfce
     ../../polybar
     ../../kitty
-    ../../vscode
     ../../zsh
     ../../neovim
     ../../picom

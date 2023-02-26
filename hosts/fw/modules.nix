@@ -15,5 +15,9 @@
     libreoffice-still
   ];
 
+ imports = [
+    ./modules/vscode/vscode.nix
+  ];
+
   home.stateVersion = "22.11";
 }
