@@ -18,6 +18,7 @@
     ../../autorandr
     ../../docker
     ../../feh
+    ../../virtualbox
   ];
 
   environment.pathsToLink = [ "/libexec" ];
