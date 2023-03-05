@@ -38,6 +38,10 @@
     networkmanager.enable = true;
     useDHCP = false;
     interfaces.wlp170s0.useDHCP = true;
+
+    wireguard = {
+      enable = true;
+    };
   };
 
   time.timeZone = "Europe/Moscow";
