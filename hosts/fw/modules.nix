@@ -17,6 +17,7 @@
 
  imports = [
     ./modules/vscode/vscode.nix
+    ./modules/direnv
   ];
 
   home.stateVersion = "22.11";
