@@ -13,6 +13,7 @@
     obsidian
     arandr
     libreoffice-still
+    ripgrep
   ];
 
  imports = [
